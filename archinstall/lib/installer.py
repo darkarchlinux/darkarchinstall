@@ -941,6 +941,12 @@ class Installer:
 		if hostname:
 			self.set_hostname(hostname)
 
+		#Editing os-release to Darkarch linux
+		root = self.target if on_target else Path('/')
+		os_release = root / '/etc/os-release'
+		with open(os_release, 'w') as fp:
+			fp.write('NAME="DarkArch Linux"\nPRETTY_NAME="DarkArch Linux"\nID=darkarch\nID_LIKE=arch\nAINSI_COLOR="0;31"\nHOME_URL="https://github.com/darkarchlinux/"')
+
 		if locale_config:
 			self.set_locale(locale_config)
 			self.set_keyboard_language(locale_config.kb_layout)
