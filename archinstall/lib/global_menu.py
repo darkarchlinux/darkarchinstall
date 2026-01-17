@@ -53,7 +53,7 @@ class GlobalMenu(AbstractMenu[None]):
 	def _get_menu_options(self) -> list[MenuItem]:
 		menu_options = [
 			MenuItem(
-				text=tr('Archinstall language'),
+				text=tr('Darkarchinstall language'),
 				action=self._select_archinstall_language,
 				preview_action=self._prev_archinstall_language,
 				key='archinstall_language',
@@ -101,7 +101,7 @@ class GlobalMenu(AbstractMenu[None]):
 			),
 			MenuItem(
 				text=tr('Hostname'),
-				value='archlinux',
+				value='darkarchlinux',
 				action=ask_hostname,
 				preview_action=self._prev_hostname,
 				key='hostname',
@@ -135,7 +135,7 @@ class GlobalMenu(AbstractMenu[None]):
 			MenuItem(
 				text=tr('Parallel Downloads'),
 				action=add_number_of_parallel_downloads,
-				value=0,
+				value=5,
 				preview_action=self._prev_parallel_dw,
 				key='parallel_downloads',
 			),
