@@ -69,7 +69,7 @@ class ArchConfig:
 	app_config: ApplicationConfiguration | None = None
 	auth_config: AuthenticationConfiguration | None = None
 	swap: ZramConfiguration | None = None
-	hostname: str = 'archlinux'
+	hostname: str = 'darkarchlinux'
 	kernels: list[str] = field(default_factory=lambda: ['linux'])
 	ntp: bool = True
 	packages: list[str] = field(default_factory=list)
@@ -293,7 +293,7 @@ class ArchConfigHandler:
 		try:
 			return version('archinstall')
 		except Exception:
-			return 'Archinstall version not found'
+			return 'Darkarchinstall version not found'
 
 	def _define_arguments(self) -> ArgumentParser:
 		parser = ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -412,13 +412,13 @@ class ArchConfigHandler:
 			'--skip-version-check',
 			action='store_true',
 			default=False,
-			help='Skip the version check when running archinstall',
+			help='Skip the version check when running darkarchinstall',
 		)
 		parser.add_argument(
 			'--skip-wifi-check',
 			action='store_true',
 			default=False,
-			help='Skip wifi check when running archinstall',
+			help='Skip wifi check when running darkarchinstall',
 		)
 		parser.add_argument(
 			'--advanced',
